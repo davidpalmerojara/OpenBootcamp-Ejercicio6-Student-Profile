@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="icon" type="image/x-icon" href="./favicon.ico">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/48b97c287e.js" crossorigin="anonymous"></script>
+   <title>Perfil de alumno</title>
+</head>
+
+<body>
+   <div class="container">
+      <div class="studentDetails">
+         <header class="header">
+            <img class="profileImg" src="cesar-rincon-XHVpWcr5grQ-unsplash.jpg">
+            <div class="profileDetails">
+               <h2>Nombre del alumno</h2>
+               <div class="location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p class="locationText">Valencia | España</p>
+               </div>
+            </div>
+         </header>
+         <form action="" class="form">
+            <label for="GET-name">Nombre y apellidos</label>
+            <input id="GET-name" type="text" name="name" placeholder="Nombre y apellidos">
+            <div class="doubleForm">
+               <div class="doubleInput">
+                  <label for="POST-name">Nº Teléfono</label>
+                  <input id="POST-name" type="text" name="name" placeholder="Nº Teléfono">
+               </div>
+               <div class="doubleInput">
+                  <label for="POST-name">Email</label>
+                  <input id="POST-name" type="text" name="name" placeholder="Email">
+               </div>
+               <div class="doubleInput">
+                  <label for="POST-name">País</label>
+                  <div class="select-wrapper">
+                     <select name="country" id="countries">
+                        <option disabled selected>País</option>
+                        <option value="españa">España</option>
+                        <option value="alemania">Alemania</option>
+                        <option value="francia">Francia</option>
+                        <option value="portugal">Portugal</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="doubleInput">
+                  <label for="POST-name">Ciudad</label>
+                  <div class="select-wrapper">
+                     <select name="city" id="cities">
+                        <option disabled selected>Ciudad</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="valencia">Valencia</option>
+                        <option value="gijon">Gijón</option>
+                        <option value="barcelona">Barcelona</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="doubleInput">
+                  <label for="POST-name">Traslado</label>
+                  <div class="select-wrapper">
+                     <select name="traslado" id="traslado">
+                        <option disabled selected>Traslado</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="doubleInput">
+                  <label for="POST-name">Presencialidad</label>
+                  <div class="select-wrapper">
+                     <select name="presencialidad" id="presencialidad">
+                        <option disabled selected>Presencialidad</option>
+                        <option value="remoto">En remoto</option>
+                        <option value="mixto">Mixto</option>
+                        <option value="presencial">Presencial</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+            <label for="buttons">Documento CV</label>
+            <div class="formButtons">
+               <label class="custom-file-upload">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>Subir de nuevo
+                  <input type="file" id="file-selector" class="file-selector" accept=".pdf">
+               </label>
+               <button onclick="deleteFile()" type="reset" class="secondary"><i
+                     class="fa-solid fa-trash-can"></i>Borrar</button>
+            </div>
+            <label for="buttons">Etiquetas</label>
+            <div class="tagContainer">
+               <div class="select-wrapper">
+                  <input autocomplete="off" class="tagInput" list="etiquetas" name="etiquetas" id="myInput"
+                     placeholder="Escribe para buscar" onkeyup='searchTag(0)' onfocus="searchTag(1)">
+               </div>
+               <ul id="ul">
+                  <li>REACT</li>
+                  <li>JAVA</li>
+                  <li>JAVASCRIPT</li>
+                  <li>HTML&CSS</li>
+                  <li>SPRING</li>
+                  <li>ANGULAR</li>
+                  <li>SYMFONY</li>
+                  <li>VUE</li>
+                  <li>TYPESCRIPT</li>
+               </ul>
+            </div>
+            <div class="tagList"></div>
+         </form>
+      </div>
+      <div class="Cvcontainer">
+         <div id="msg"></div>
+         <object id="frame" data="React.pdf" type="application/pdf" width="100%" frameborder="0" scrolling="none">
+            <div id="fallback" class="fallback">
+               <label for="buttons">El navegador no puede mostrar el documento PDF</label>
+               <button class="downloadBtn"><a id="PDFLink" href="React.pdf"><i class="fa-solid fa-download"></i>Descargar</a></button>
+            </div>
+            <div id="fallbackNoDownload" class="fallback">
+               <label for="buttons">No se ha subido ningún archivo</label>
+               <label class="custom-file-upload">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>Subir de nuevo
+                  <input type="file" id="file-selector2" class="file-selector" style="display: none;" accept=".pdf">
+               </label>
+            </div>
+         </object>
+      </div>
+   </div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>
